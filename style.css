@@ -1,0 +1,52 @@
+body {
+    margin: 0px;
+}
+
+/*navbar*/
+.nav-container {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 12vh;
+    background-color: black;
+}
+
+.navbar-logo {
+    justify-self: start;
+    margin-left: 20px;
+    color: aliceblue;
+    margin-top: 4vh;
+    cursor: pointer;
+}
+
+.ver-carrito {
+    font-size: 25px;
+    margin-right: 20px;
+    margin-top: 3.5vh;
+    cursor: pointer;
+}
+
+/*banner styles*/
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /*background-image: url("http://:..."); */
+}
+
+.banner-container {
+    text-align: center;
+    padding: 15% 0;
+}
+
+.banner h1 {
+    margin: 0;
+    color: aliceblue;
+    opacity: 0.7;
+    text-shadow: 1px 1px 3px rgba(rgb(0, 0, 0, 0.2));
+}
