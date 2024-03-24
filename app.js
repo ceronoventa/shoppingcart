@@ -1,6 +1,6 @@
 //obtener elemento del html creando una variable
 const shopContent = document.getElementById("shopContent");
-
+const verCarrito = document.getElementById("verCarrito");
 
 //array vacio de carrito
 let carrito = [];
@@ -24,4 +24,19 @@ comprar.innerText = "comprar";
 comprar.className = "comprar";
 content.append(comprar);
 
+comprar.addEventListener("click", () =>
+carrito.push({
+    id: product.id,
+    img: product.img,
+    nombre: product.nombre,
+    precio: product.precio,
 })
+
+);
+});
+
+verCarrito.addEventListener("click", () => {
+    //crear un modal
+    
+}
+)
