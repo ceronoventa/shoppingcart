@@ -35,8 +35,9 @@ body {
 .banner {
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    /*background-image: url("https://i.pinimg.com/564x/2b/25/85/2b2585aa6f0781d15411c7bf30e2d949.jpg"); */
+    height: 70vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://i.pinimg.com/564x/3a/69/db/3a69dbe758893b4d35593beacad7cd91.jpg");
 }
 
 .banner-container {
