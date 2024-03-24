@@ -1,72 +1,53 @@
-//array de productos
+//obtener elemento del html creando una variable
+const shopContent = document.getElementById("shopContent");
+
+//array de porductos- objetos
 const productos = [
-    {nombre: "harina", precio: 50 },
-    {nombre: "galletas", precio: 100 },
-    {nombre: "cerveza", precio: 150 },
-    {nombre: "leche", precio: 200 },
-    {nombre: "bebida", precio: 250 },
+    {
+        id: 1,
+        nombre: "harina",
+        precio: 50,
+        img:
+        "https://i.pinimg.com/474x/15/a8/9e/15a89e520c375b9ef995d4e5a4fc4052.jpg",
+    },
+    {
+        id: 2,
+        nombre: "galletas",
+         precio: 100,
+        img: "https://i.pinimg.com/474x/c9/74/77/c974779e0c81aca3a7998728b0072446.jpg",
+    },
+    {
+        id: 3,
+        nombre: "jugo",
+        precio: 150,
+        img: "https://i.pinimg.com/564x/4a/e4/3f/4ae43f1cea5b43e723103242135fc43b.jpg",
+    },
+    {
+        id: 4,
+        nombre: "leche",
+        precio: 200,
+        img: "https://i.pinimg.com/564x/cd/e3/85/cde385fa76d57a525dd764b20f615285.jpg",
+    },
+    {
+        id: 5,
+        nombre: "bebida",
+        precio: 250,
+        img: "https://i.pinimg.com/564x/26/e9/76/26e9766e8a74a840954affbf07519f1c.jpg",
+    },
 ];
 //array vacio de carrito
-let carrito = []
+let carrito = [];
 
-//metodo entrada y salida
-let seleccion = prompt("Hola, deseas comprar?")
-//armar bucle que responda al usuario mientras
-while(seleccion != "si" && seleccion != "no"){
-    alert("porfavor indica si o no")
-    seleccion = prompt("hola, deseas comprar algo? si o no")
-}
+productos.forEach((product)=> {
+    /*document hace alucion a toda la interfaz*/
+    let content = document.createElement("div");
+/*crear contenido html dentro inner crea etiquetas agrega al div */
+content.innerHTML =  `
+<img src="${product.img}">
+<h3>${product.nombre}</h3>
+<p>${product.precio} $</p>
+`;
 
-if (seleccion == "si"){
-    alert("a continuación nuestros productos")
-    let todosLosProductos = productos.map((productos) => productos.nombre + " " + productos.precio + "$");
-alert(todosLosProductos.join(" - "))
-} else if (seleccion == "no"){
-    alert("gracias por venir")
-}
-//bucle
-while(seleccion != "no"){
-    let producto = pompt("agrega un producto a tu carrito")
-    let precio = 0
-    if(producto == "harina " || producto == "galletas" || producto == "cerveza" 
-    || producto == "leche" || producto == "bebida"){
-        switch(producto){
-            case "harina":
-            precio = 50
-            break;
-            case "galletas":
-            precio = 100
-            break;
-            case "cerveza":
-            precio = 150
-            break;
-            case "leche":
-            precio = 200
-            break;
-            case "bebida":
-            precio = 250
-            break;
-            default:
-                break;
-        }
-        let unidades = parseInt(prompt("cuantes unidades quieres?"))
-        //meterlo al carrito
-        carrito.push({producto, unidades, precio})
-        console.log(carrito)
-    } else {
-        alert("no tenemos ese producto")
-    }
-    seleccion = prompt("deseas seguir comprando?")
-    while(seleccion === "no"){
-        alert("gracias")
-        carrito.forEach((carritoFinal) => {
-            console.log(`producto: ${carritoFinal.producto}, unidades: ${carritoFinal.unidades},
-            total a pagar ${carritoFinal.unidades * carritoFinal.precio}`)
-        })
-        break;
-    }
-    }
-    //acc es acumulador
-    // el representa cada elemento del arreglo ej el.carrito
-    const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0)
-
+//Unir el div padre que esta en la variable shopContent
+shopContent.append(content);
+})
