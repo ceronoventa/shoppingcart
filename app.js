@@ -37,8 +37,10 @@ carrito.push({
 });
 
 verCarrito.addEventListener("click", () => {
+  //Limpiar el contenido con elemento vacío
+    modalContainer.innerHTML = "";
+    modalContainer.style.display = "flex";
     //crear un modal donde van las compras agregadas
-    
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header"
     modalHeader.innerHTML = `
@@ -49,6 +51,10 @@ verCarrito.addEventListener("click", () => {
 const modalButton = document.createElement("h1");
 modalButton.innerText = "x";
 modalButton.className = "modal-header-button";
+
+modalButton.addEventListener("click", () => {
+modalContainer.style.display = "none";
+});
 
 modalHeader.append(modalButton);
 
